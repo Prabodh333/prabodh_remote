@@ -9,7 +9,7 @@ stage(run httpd){
 sh "service httpd start"
 }
 stage(deply index){
-cp -r index.html /var/www/html/
+cp -r file 1 /var/www/html/
 
 }
 }
