@@ -1,17 +1,25 @@
-pipeline{
-  agent any{
-  stages{
-     stage(install httpd){
-      sh "yum install httpd -y"
+pipeline {
+agent any 
 
+    stages{
+     stage(install){
+         steps{
+      sh "yum install httpd -y"
 }
-    stage(run httpd){
+}
+    stage(run){
+        steps{
        sh "service httpd start"
 }
-    stage(deply index){
-    cp -r file 3 /var/www/html/
+            
+        }
 
+    stage(deploy){
+ steps{
+    "cp -r file 3 /var/www/html/"
+}
+     
+ }
 }
 }
-}
-}
+
