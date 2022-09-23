@@ -1,15 +1,15 @@
 pipeline{
-agent any{
-stages{
-Stage(install httpd){
-sh "yum install httpd -y"
+  agent any{
+  stages{
+     stage(install httpd){
+      sh "yum install httpd -y"
 
 }
-stage(run httpd){
-sh "service httpd start"
+    stage(run httpd){
+       sh "service httpd start"
 }
-stage(deply index){
-cp -r file 3 /var/www/html/
+    stage(deply index){
+    cp -r file 3 /var/www/html/
 
 }
 }
